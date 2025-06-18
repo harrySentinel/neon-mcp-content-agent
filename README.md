@@ -16,7 +16,7 @@ The goal is to explore agent-based architectures for generating structured conte
 - **MCP (Model Context Protocol)** via [Neon MCP Server](https://github.com/neonsecret/mcp-server)
 - **Inngest AgentKit** for event-driven agent workflows
 - **Gemini API** (Google) as the large language model
-- **Database** (can be PostgreSQL, Supabase, MongoDB, etc.)
+- **Database** (PostgreSQL)
 - Built with **TypeScript**
 
 ---
