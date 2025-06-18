@@ -1,0 +1,22 @@
+{
+  "name": "neon-mcp-content-agent",
+  "version": "1.0.0",
+  "description": "This project is an experimental AI-powered content generation pipeline built with:",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harrySentinel/neon-mcp-content-agent.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harrySentinel/neon-mcp-content-agent/issues"
+  },
+  "homepage": "https://github.com/harrySentinel/neon-mcp-content-agent#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.3"
+  }
+}

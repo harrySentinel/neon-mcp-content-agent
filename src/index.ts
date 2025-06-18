@@ -1,0 +1,1 @@
+const neonServerUrl=`https://server.smithery.ai/neon/mcp?api_key=${process.env.SMITHERY_API_KEY}&profile=international-ladybug-KAgGBh`
