@@ -18,5 +18,9 @@
   "homepage": "https://github.com/harrySentinel/neon-mcp-content-agent#readme",
   "devDependencies": {
     "@types/node": "^24.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "zod": "^3.25.67"
   }
 }
