@@ -2,7 +2,9 @@
 
 An intelligent content creation system that combines AI research, content generation, and database storage into one seamless workflow. Built with Inngest Agent Kit, Google Gemini AI, and Neon PostgreSQL.
 
-![Content Creation Flow](https://i.ibb.co/qFBXpd0B/inngest-img.png)
+![Content-creation-flow](https://github.com/user-attachments/assets/260b69b9-741f-486d-8d39-bd77429c17e4)
+![invoke function](https://github.com/user-attachments/assets/89c19423-a391-420c-b072-10705f6239a8)
+![neon db img](https://github.com/user-attachments/assets/6c568c7d-adff-4654-856a-bda726ae6dab)
 
 ## ✨ Features
 
