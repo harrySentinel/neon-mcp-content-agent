@@ -4,11 +4,15 @@ import {
     createTool,
     gemini
 } from "@inngest/agent-kit";
+import { createServer } from "@inngest/agent-kit/server";
 
 import dotenv from "dotenv";
 import { z } from "zod";
 
+// Loading environment variables
 dotenv.config();
+
+const PORT = process.env.PORT || 3010;
 
 
 const neonServerUrl=`https://server.smithery.ai/neon/mcp?api_key=${process.env.SMITHERY_API_KEY}&profile=international-ladybug-KAgGBh`
@@ -28,8 +32,8 @@ const doneTool = createTool({
 
         network?.state.kv.set("completed", true);
         network?.state.kv.set("title", title);
-        network?.state.kv.set("title", word_count);
-        network?.state.kv.set("title", summary);
+        network?.state.kv.set("word_count", word_count);
+        network?.state.kv.set("summary", summary);
         
         console.log(`Content completed: ${title} (${word_count} words)`);
         console.log(`Summary: ${summary}`);
@@ -83,5 +87,76 @@ const contentCreatorAgent = createAgent({
  - Aim for the requested word count
  - Make content SEO-friendly with relevant keywords
  
- IMPORTANT: Always call the 'done' tool when you finish creating and storing content!`
+ IMPORTANT: Always call the 'done' tool when you finish creating and storing content!`,
+
+  model: gemini({
+    model: "gemini-2.0-flash-lite",
+    apiKey: process.env.GEMINI_API_KEY,
+  }),
+
+  tools: [doneTool],
+
+  mcpServers:[
+    {
+        name:"neon",
+        transport:{
+            type:"streamable-http",
+            url: neonServerUrl,
+        },
+    },
+  ],
+});
+
+const contentCreationNetwork = createNetwork({
+    name: "content-creation-assistant",
+    agents: [contentCreatorAgent],
+    router: ({ network }) => {
+        const isCompleted = network?.state.kv.get("completed");
+
+        if(!isCompleted) {
+            console.log(
+                "Task in progress - continuing with content creator agent"
+            );
+            return contentCreatorAgent;
+        }
+
+        console.log("Task completed - stopping execution");
+        return undefined; // Stop execution when done
+    },
+
+    defaultModel: gemini({
+        model:"gemini-2.0-flash-lite",
+        apiKey: process.env.GEMINI_API_KEY,
+    })
+})
+
+
+const server = createServer({
+    networks: [contentCreationNetwork],
+});
+
+server.listen(PORT, ()=> {
+  console.log("🚀 Content Creation Assistant running on http://localhost:3010");
+  console.log("🗄️ Connected to Neon PostgreSQL via MCP");
+  console.log("");
+  console.log("📋 Setup Instructions:");
+  console.log(
+    "1. Make sure you have SMITHERY_API_KEY and GEMINI_API_KEY in your environment"
+  );
+  console.log(
+    "2. Run: npx inngest-cli@latest dev -u http://localhost:3010/api/inngest"
+  );
+  console.log("3. Open: http://localhost:8288");
+  console.log("");
+  console.log("💡 Try this prompt:");
+  console.log(
+    "'Create a comprehensive blog post about sustainable urban gardening for beginners. Make it 1000 words with practical tips and include SEO keywords.'"
+  );
+  console.log("");
+  console.log("🔍 What the agent will do:");
+  console.log("- Research sustainable urban gardening using web search");
+  console.log("- Create database tables for content storage");
+  console.log("- Generate comprehensive blog post content");
+  console.log("- Store content with metadata in Neon database");
+  console.log("- Provide completion summary with word count");
 })
