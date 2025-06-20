@@ -1,4 +1,4 @@
-# 🚀 AI Content Creation Assistant
+# ➣ AI Content Creation Assistant
 
 An intelligent content creation system that combines AI research, content generation, and database storage into one seamless workflow. Built with Inngest Agent Kit, Google Gemini AI, and Neon PostgreSQL.
 
@@ -38,7 +38,7 @@ User Prompt → AI Agent → Web Research → Content Generation → Database St
 - Google Gemini API key
 - Smithery API key (for MCP integration)
 
-## 🚀 Quick Start
+## ➣ Quick Start
 
 ### 1. Clone and Install
 
@@ -102,7 +102,7 @@ Open your browser to:
 - **Inngest Dashboard**: http://localhost:8288
 - **API Server**: http://localhost:3010
 
-## 💡 Usage Examples
+## ➣ Usage Examples
 
 ### Basic Content Creation
 
@@ -127,7 +127,7 @@ Include statistics, case studies, and actionable advice. Make it SEO-optimized f
 'remote work benefits' keyword.
 ```
 
-## 🔧 How It Works
+## ➣ How It Works
 
 ### 1. **Research Phase**
 - AI agent receives your content request
@@ -271,7 +271,7 @@ Common issues and solutions:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## ➣ Acknowledgments
 
 - [Inngest](https://inngest.com) for the amazing agent orchestration framework
 - [Neon](https://neon.tech) for the excellent PostgreSQL platform
