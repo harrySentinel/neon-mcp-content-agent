@@ -260,16 +260,6 @@ Common issues and solutions:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📈 Roadmap
-
-- [ ] Add support for multiple content types (emails, social posts, etc.)
-- [ ] Implement content scheduling and publishing
-- [ ] Add analytics dashboard
-- [ ] Support for multiple AI models
-- [ ] Content optimization suggestions
-- [ ] Batch content generation
-- [ ] API endpoints for external integrations
-
 ## 🔒 Security
 
 - All API keys are stored in environment variables
@@ -287,15 +277,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Neon](https://neon.tech) for the excellent PostgreSQL platform
 - [Google](https://ai.google.dev) for the powerful Gemini AI model
 - [Smithery](https://smithery.ai) for MCP server integration
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/yourusername/ai-content-creator/issues) page
-2. Review the logs for error messages
-3. Verify your environment configuration
-4. Create a new issue with detailed information
 
 ---
 
