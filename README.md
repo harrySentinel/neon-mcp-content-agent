@@ -1,6 +1,6 @@
 # ➣ AI Content Creation Assistant
 
-An intelligent content creation system that combines AI research, content generation, and database storage into one seamless workflow. Built with Inngest Agent Kit, Google Gemini AI, and Neon PostgreSQL.
+An intelligent content creation system that combines AI research, content generation, and database storage into one seamless workflow. Built with Inngest Agent Kit, Google Gemini AI (using google gemini api), and Neon PostgreSQL.
 
 ![Content-creation-flow](https://github.com/user-attachments/assets/260b69b9-741f-486d-8d39-bd77429c17e4)
 ![invoke function](https://github.com/user-attachments/assets/89c19423-a391-420c-b072-10705f6239a8)
