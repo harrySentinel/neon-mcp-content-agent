@@ -38,7 +38,7 @@ User Prompt → AI Agent → Web Research → Content Generation → Database St
 - Google Gemini API key
 - Smithery API key (for MCP integration)
 
-## ➣ Quick Start
+## ➣ Quick guide
 
 ### 1. Clone and Install
 
