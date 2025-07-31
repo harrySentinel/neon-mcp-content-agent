@@ -25,7 +25,7 @@ User Prompt → AI Agent → Web Research → Content Generation → Database St
 ### Core Components
 
 - **Inngest Agent Kit**: Orchestrates the AI workflow
-- **Google Gemini 2.0**: Powers the content creation and research
+- **Google Gemini 2.0**: Powers the content creation and research (via api)
 - **Neon PostgreSQL**: Stores all content and metadata
 - **MCP Servers**: Provides external data integration
 - **Custom Tools**: SQL execution, connection testing, and completion tracking
